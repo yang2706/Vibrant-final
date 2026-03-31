@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";*-
+import { Link } from "react-router-dom";
 
 const images = [
   "https://d39e6chxflpvuj.cloudfront.net/media/SPW%20ICONSIAM%2028.jpg",
