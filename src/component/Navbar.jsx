@@ -4,7 +4,9 @@ import { LuUser } from "react-icons/lu";
 import { FiShoppingCart } from "react-icons/fi";
 import { FaRegHeart } from "react-icons/fa";
 import { FiSearch } from "react-icons/fi";
+import { FaRegUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
+
 
 function Navbar({ wishlistCount }) {
   return (
@@ -34,7 +36,7 @@ function Navbar({ wishlistCount }) {
         </ul>
 
         {/* Icons */}
-        <div className="flex items-center gap-5 text-xl">
+        <div className="flex items-center gap-5 text-2xl">
 
           <FiSearch className="cursor-pointer hover:scale-110 transition"/>
 
@@ -54,7 +56,7 @@ function Navbar({ wishlistCount }) {
 
           {/* User */}
           <Link to="/login">
-            <LuUser className="cursor-pointer hover:scale-110 transition" />
+            <FaRegUser className="cursor-pointer hover:scale-110 transition"/>
           </Link>
 
         </div>

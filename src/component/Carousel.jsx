@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";*-
 
 const images = [
   "https://d39e6chxflpvuj.cloudfront.net/media/SPW%20ICONSIAM%2028.jpg",
@@ -99,9 +100,12 @@ export default function Carousel() {
           </p>
 
           {/* Button */}
-          <button className="bg-white text-black px-6 py-3 cursor-pointer rounded-md text-lg font-semibold hover:bg-gray-200 transition duration-300">
-            {currentMainText.buttonText}
-          </button>
+          <Link to="/shop">
+            <button className="bg-white text-black px-6 py-3 cursor-pointer rounded-md text-lg font-semibold hover:bg-gray-200 transition duration-300">
+              {currentMainText.buttonText}
+            </button>
+          </Link>
+
 
         </div>
       </div>

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { FaRegHeart, FaHeart } from 'react-icons/fa'
 
-export default function Card({ product, onAddToWishlist, isLiked }) {
+export default function Card({ product, onAdd2ToWishlist, isLiked, onRemove2FromWishlist }) {
   const [liked, setLiked] = useState(isLiked || false)
 
   // Sync with parent wishlist
@@ -10,15 +10,19 @@ export default function Card({ product, onAddToWishlist, isLiked }) {
   }, [isLiked])
 
   const changeIcon = () => {
-    setLiked(!liked)
-    if (!liked) {
-      onAddToWishlist(product)
+    if (liked) {
+      // Remove from wishlist
+      onRemove2FromWishlist && onRemove2FromWishlist(product.id)
+    } else {
+      // Add to wishlist
+      onAdd2ToWishlist && onAdd2ToWishlist(product)
     }
+    setLiked(!liked)
     
   }
 
   return (
-    <div className="bg-white rounded-xl cursor-pointer shadow hover:shadow-lg transition p-3 relative">
+    <div className="bg-white rounded-xl cursor-pointer shadow hover:shadow-lg hover:-translate-y-1 transition p-3 relative">
       {/* Discount */}
       {product.discount && (
         <span className="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded">

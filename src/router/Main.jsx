@@ -49,12 +49,19 @@ function Main() {
         <Route element={<WithNav />}>
           <Route
             path="/"
-            element={<Home onAddToWishlist={handleAddToWishlist} wishlist={wishlist} />}
+            element={<Home onAddToWishlist={handleAddToWishlist}
+                onRemoveFromWishlist={handleRemoveFromWishlist}
+                wishlist={wishlist} />}
           />
-          <Route path="/home" element={<Home onAddToWishlist={handleAddToWishlist} wishlist={wishlist}/>}/>
-          <Route path="/shop" element={<Shop />} />
+          <Route path="/home" element={<Home onAddToWishlist={handleAddToWishlist}
+                onRemoveFromWishlist={handleRemoveFromWishlist}
+                wishlist={wishlist} />} />
+          <Route path="/shop" element={<Shop onAddToWishlist={handleAddToWishlist}
+                onRemoveFromWishlist={handleRemoveFromWishlist}
+                wishlist={wishlist}/>} />
           <Route path="/trending" element={<Trending />} />
           <Route path="/contact" element={<Contact />} />
+
           <Route
             path="/wishlist"
             element={
